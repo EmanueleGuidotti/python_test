@@ -1,8 +1,8 @@
 
 test_settings = {'theme':'light', 'language':'English', 'notifications':'on'}
 
-def add_setting(settings, keys):
-    key, value = keys
+def add_setting(settings, key_p):
+    key, value = key_p
     key = key.lower()
     value = value.lower()
 
@@ -13,8 +13,8 @@ def add_setting(settings, keys):
         settings[key] = value
         return f"""Setting '{key}' added with value '{value}' successfully!"""
 
-def update_setting(settings, keys):
-    key, value = keys
+def update_setting(settings, key_p):
+    key, value = key_p
     key = key.lower()
     value = value.lower()  
 
@@ -43,3 +43,5 @@ def view_settings(settings):
         for key, value in settings.items():
             result += f"""{key.capitalize()}: {value}\n"""
         return result
+
+print(view_settings(test_settings))
